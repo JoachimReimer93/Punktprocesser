@@ -2,3 +2,81 @@
 title: "Forsøg med spatstat"
 output: html_document
 ---
+```{r}
+spatstat.data::amacrine
+```
+```{r}
+swedishpines
+?swedishpines
+```
+```{r}
+Swedishpines1 <- rescale(swedishpines)
+```
+```{r}
+DD <- density(Swedishpines1)
+plot(DD)
+```
+
+```{r}
+plot(Swedishpines1)
+```
+```{r}
+K <- Kest(Swedishpines1)
+plot(K)
+```
+```{r}
+plot(K, sqrt(iso/pi) ~ r)
+ plot(K, sqrt(./pi) ~ r, ylab="L(r)", main="L function for cells")
+```
+```{r}
+as.function.fv(K)
+```
+```{r}
+methods(class="fv")
+```
+
+```{r}
+K
+```
+```{r}
+newshapley <- unique.ppp(shapley)
+
+```
+
+```{r}
+plot(newshapley)
+Dens <- density(newshapley)
+plot(Dens)
+```
+
+```{r}
+Kf <- Kest(newshapley)
+
+```
+
+```{r}
+plot(Kf)
+```
+```{r}
+?rGaussPoisson()
+pp <- rGaussPoisson(30, 0.07, 0.5)
+plot(pp)
+```
+```{r}
+Kpp <- Kest(pp)
+plot(Kpp)
+```
+```{r}
+Pois <- rpoispp(100)
+plot(Pois)
+```
+
+```{r}
+Kpois <- Kest(Pois)
+plot(Kpois)
+```
+
+```{r}
+?rLGCP
+```
+
