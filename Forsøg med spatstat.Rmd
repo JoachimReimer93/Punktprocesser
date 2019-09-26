@@ -1,0 +1,4 @@
+---
+title: "Forsøg med spatstat"
+output: html_document
+---
